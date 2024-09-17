@@ -16,7 +16,7 @@ def get_predictions(
 
     cleaned_text = clean_review(text)
 
-    if is_english(cleaned_text):
+    if not is_english(cleaned_text):
         return 'The review must be written in English', True
 
     tokenized_text = preprocess_text(cleaned_text)

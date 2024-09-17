@@ -56,5 +56,8 @@ def is_english(text):
     return True
 
 
+if __name__ == '__main__':
+    print(is_english(clean_review('NIGGER NIGGERS')))
+
 
 
