@@ -1,0 +1,83 @@
+<!-- templates/form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Review Prediction</title>
+    <style>
+        body {
+            background-color: #f7f9fc; /* Светлый фон */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff; /* Белый фон для контейнера */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px; /* Ширина контейнера */
+        }
+        h1 {
+            color: #4a90e2; /* Пастельный синий */
+            text-align: center;
+        }
+        label {
+            color: #7f8c8d; /* Пастельный серый */
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            border: 2px solid #bdc3c7; /* Пастельная рамка */
+            border-radius: 5px;
+            padding: 10px;
+            resize: none; /* Запрет изменения размера */
+        }
+        input[type="submit"] {
+            background-color: #4caf50; /* Пастельный зеленый */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Темнее при наведении */
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ecf0f1; /* Светло-серый фон для результатов */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Review Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="review_text">Input review text:</label><br>
+            <textarea id="review_text" name="review_text" required></textarea><br><br>
+            <input type="submit" value="Predict">
+        </form>
+
+        {% if warning %}
+            <p style="color: red;">{{ warning }}</p>
+        {% endif %}
+
+        {% if predictions %}
+            <div class="result">
+                <h2>Prediction results:</h2>
+                <p>Rating: {{ predictions.rating }}</p>
+                <p>Status: {{ predictions.status }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
