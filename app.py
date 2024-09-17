@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, Form, HTTPException
+from fastapi import FastAPI, Request, Form
 from pydantic import BaseModel
 from src.inference import get_predictions
 from fastapi.responses import HTMLResponse

@@ -48,7 +48,10 @@ def clean_review(review):
 
 
 def is_english(text):
-    if len(set(text) & set(Variables.ENGLISH_LETTERS)) / len(text) < 0.8:
+    try:
+        if len(set(text) & set(Variables.ENGLISH_LETTERS)) / len(set(text)) < 0.8:
+            return False
+    except ZeroDivisionError:
         return False
     return True
 
