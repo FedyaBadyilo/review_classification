@@ -1,6 +1,6 @@
 from transformers import BatchEncoding
 import numpy as np
-from bs4 import BeautifulSoup
+from  bs4 import BeautifulSoup
 import re
 from nltk.tokenize import WordPunctTokenizer
 

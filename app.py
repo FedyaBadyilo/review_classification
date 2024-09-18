@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Request, Form
 from pydantic import BaseModel
+
 from src.inference import get_predictions
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates

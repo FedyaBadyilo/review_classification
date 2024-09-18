@@ -1,8 +1,8 @@
 import transformers
-from src.config import Variables
 import pickle
 import os
-import pathlib
+
+from src.config import Variables
 
 
 def create_model() -> transformers.BertForSequenceClassification:
