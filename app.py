@@ -28,8 +28,8 @@ async def predict(request: Request, review_text: str = Form(...)):
     return templates.TemplateResponse("form.html", {"request": request, "predictions": predictions})
 
 
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+# if __name__ == "__main__":
+#     import uvicorn
+#     uvicorn.run(app, port=8000)
 
 
